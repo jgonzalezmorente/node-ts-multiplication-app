@@ -22,10 +22,10 @@ export class SaveFile implements SaveFileUseCase {
     }: Options): boolean {
         try {            
             fs.mkdirSync(fileDestination, { recursive: true });
-            fs.writeFileSync(`${ fileDestination }/${ fileName }.txt`, fileContent);
-            console.log('File created!');
+            fs.writeFileSync(`${ fileDestination }/${ fileName }.txt`, fileContent);            
             return true;
-        } catch (error) {            
+        } catch (error) {
+            // console.log(error); // winston
             return false;            
         }
     };
